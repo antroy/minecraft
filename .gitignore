@@ -1,0 +1,6 @@
+firstmod/src/assets/forge
+
+*.class
+*.orig
+*~
+*.bak
