@@ -35,7 +35,7 @@ public class GeorgesMod {
 			.setDropItem(605)
 			.setHardness(3.0F).setResistance(5.0F)
 			.setStepSound(Block.soundStoneFootstep)
-			.setUnlocalizedName("blackdiamondore").setTextureName("firstmod:blackdiamondore");
+			.setUnlocalizedName("blackdiamondore").setTextureName("firstmod:black_diamond_ore");
     static {
 
 		GameRegistry.registerBlock(oreBlackDiamond, "blackdiamondore");
