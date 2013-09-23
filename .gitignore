@@ -1,4 +1,5 @@
 firstmod/src/assets/forge
+.directory
 **/.project
 *.class
 *.orig

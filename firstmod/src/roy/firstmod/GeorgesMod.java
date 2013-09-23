@@ -5,8 +5,13 @@ package roy.firstmod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
+import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -30,9 +35,27 @@ public class GeorgesMod {
 		GameRegistry.registerItem(blackdiamond, "blackdiamond");
 		LanguageRegistry.addName(blackdiamond, "Black Diamond");
 	}
+    public static Item cheese = (new ItemFood(700, 5, 0.6F, false))
+    		.setUnlocalizedName("cheese")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:cheese");
+	static {
+		
+		GameRegistry.registerItem(cheese, "cheese");
+		LanguageRegistry.addName(cheese, "Cheese");	
+	}
+	public static Item butter = (new ItemFood(701, 6, 0.6F, false))
+			.setUnlocalizedName("butter")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:butter");
+	static {
+		
+		GameRegistry.registerItem(butter, "butter");
+		LanguageRegistry.addName(butter, "Butter");
+	}
 	
 	public static final Block oreBlackDiamond = (new BlockOreDropper(606))
-			.setDropItem(605)
+			.setDropItem(606)
 			.setHardness(3.0F).setResistance(5.0F)
 			.setStepSound(Block.soundStoneFootstep)
 			.setUnlocalizedName("blackdiamondore").setTextureName("firstmod:black_diamond_ore");
@@ -41,6 +64,31 @@ public class GeorgesMod {
 		GameRegistry.registerBlock(oreBlackDiamond, "blackdiamondore");
 		LanguageRegistry.addName(oreBlackDiamond, "Black Diamond Ore");
     }
+//    WOOD(0, 59, 2.0F, 0.0F, 15),
+//    STONE(1, 131, 4.0F, 1.0F, 5),
+//    IRON(2, 250, 6.0F, 2.0F, 14),
+//    EMERALD(3, 1561, 8.0F, 3.0F, 10),
+//    GOLD(0, 32, 12.0F, 0.0F, 22);
+    public static final EnumToolMaterial BLACK_DIAMOND = EnumHelper.addToolMaterial("BLACK_DIAMOND", 4, 3568, 10.0F, 5.0F, 30);
+    
+    public static Item blackDiamondSword = (new ItemSword(650, BLACK_DIAMOND))
+    		.setUnlocalizedName("blackSwordDiamond")
+    		.setTextureName("firstmod:black_diamond_sword");
+    static {
+
+		GameRegistry.registerItem(blackDiamondSword, "black_diamond_sword");
+		LanguageRegistry.addName(blackDiamondSword, "Black Diamond Sword");
+    }  
+    
+    public static Item blackDiamondPickaxe = (new ItemPickaxe(651, BLACK_DIAMOND))
+    		.setUnlocalizedName("blackDiamondPickaxe")
+    		.setTextureName("firstmod:black_diamond_pickaxe");
+    static {
+    	
+    	GameRegistry.registerItem(blackDiamondPickaxe, "black_diamond_pickaxe");
+    	LanguageRegistry.addName(blackDiamondPickaxe, "Black Diamond Pickaxe");
+    }
+    
     
  @Instance("GeorgesMod")
  public static GeorgesMod instance;
@@ -73,14 +121,14 @@ public class GeorgesMod {
      ItemStack endstone = new ItemStack(Block.whiteStone);
      ItemStack torchRedstoneActiveStack = new ItemStack(Block.torchRedstoneActive);
      ItemStack enderPearlStack = new ItemStack(Item.enderPearl);
+     ItemStack eggStack = new ItemStack(Item.egg);
+     ItemStack milkStack = new ItemStack(Item.bucketMilk);
+     ItemStack cheeseStack = new ItemStack(cheese);
+     ItemStack blackDiamondStack = new ItemStack(blackdiamond);
+     ItemStack redstoneStack = new ItemStack(Item.redstone);
+     ItemStack diamondsword = new ItemStack(Item.swordDiamond);
 
-//     GameRegistry.addShapelessRecipe(diamondsStack, dirtStack, dirtStack,
-//             dirtStack, dirtStack, dirtStack, dirtStack, new ItemStack(
-//                     Block.sand), gravelStack, cobbleStack);
-//
-//     GameRegistry.addRecipe(new ItemStack(Block.cobblestone), "xy", "yx",
-//             'x', dirtStack, 'y', gravelStack);
-//
+
      GameRegistry.addRecipe(new ItemStack(Item.saddle), 
     		 "x x", 
     		 "xxx", 
@@ -101,11 +149,6 @@ public class GeorgesMod {
     		 " x ",
     		 "x x",
     		 "x x",
-    		 'x', IronStack);
-     GameRegistry.addRecipe(new ItemStack(Item.bootsChain),
-    		 "   ",
-    		 "x x",
-    		 "   ",
     		 'x', IronStack);
      GameRegistry.addRecipe(new ItemStack(Item.horseArmorDiamond),
     		 "xyx",
@@ -142,10 +185,48 @@ public class GeorgesMod {
 			"xyx",
 			"xxx",
 			'x', endstone, 'y', enderPearlStack);
-	
+	GameRegistry.addRecipe(new ItemStack(cheese),
+			"   ",
+			"xyx",
+			"   ",
+			'x', milkStack, 'y', eggStack);
+	GameRegistry.addRecipe(new ItemStack(cheese),
+			"xyx",
+			"   ",
+			"   ",
+	        'x', milkStack, 'y', eggStack);
+	GameRegistry.addRecipe(new ItemStack(cheese),
+			"   ",
+			"   ",
+			"xyx",
+			'x', milkStack, 'y', eggStack);
+	GameRegistry.addRecipe(new ItemStack(Item.bootsChain),
+			"   ",
+			"   ",
+			"x x",
+			'x', IronStack);
+	GameRegistry.addRecipe(new ItemStack(butter),
+			"xyx",
+			"   ",
+			"   ",
+			'x', cheeseStack, 'y', milkStack);
+	GameRegistry.addRecipe(new ItemStack(butter),
+			"   ",
+			"xyx",
+			"   ",
+	'x', cheeseStack, 'y', milkStack);
+	GameRegistry.addRecipe(new ItemStack(butter),
+			"   ",
+			"   ",
+			"xyx",
+			'x', cheeseStack, 'y', milkStack);
+	GameRegistry.addRecipe(new ItemStack(blackDiamondSword),
+			"xxy",
+			"xzy",
+			"xyy",
+			'x', blackDiamondStack, 'y', redstoneStack, 'z', diamondsword);
 //     GameRegistry.addSmelting(Block.stone.blockID, new ItemStack(
 //             Block.stoneBrick), 0.1f);
-//
 //     FurnaceRecipes.smelting().addSmelting(Block.cloth.blockID, 15,
 //             new ItemStack(Block.cloth, 1, 0), 0.1f);
 
