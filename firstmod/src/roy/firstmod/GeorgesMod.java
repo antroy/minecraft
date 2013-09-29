@@ -96,7 +96,7 @@ public class GeorgesMod {
 	static {
 
 		GameRegistry.registerItem(blackDiamondPickaxe, "black_diamond_pickaxe");
-		LanguageRegistry.addName(blackDiamondPickaxe, "Black Diamond Pickaxe");
+		LanguageRegistry.addName(blackDiamondPickaxe, "Black Diamond Pick");
 	}
 
 	public static Item blackDiamondAxe = (new ItemAxe(651, BLACK_DIAMOND))
@@ -147,13 +147,13 @@ public class GeorgesMod {
 		GameRegistry.registerItem(notchSword, "notch_sword");
 		LanguageRegistry.addName(notchSword, "Notch Sword");
 	}
-
+    
 	public static final EnumToolMaterial HELL_ROD = EnumHelper.addToolMaterial(
 			"HELL_ROD", 20, 20000, 40.0F, 20.0F, 200);
 
 	public static Item herobrineSword = (new ItemSword(641, HELL_ROD))
-			.setUnlocalizedName("herobrineSword").setTextureName(
-					"firstmod:herobrine_sword");
+			.setUnlocalizedName("herobrineSword")
+			.setTextureName("firstmod:herobrine_sword");
 	static {
 
 		GameRegistry.registerItem(herobrineSword, "herobrine_sword");
@@ -178,7 +178,7 @@ public class GeorgesMod {
 	static {
 
 		GameRegistry.registerItem(rubyPickaxe, "ruby_pickaxe");
-		LanguageRegistry.addName(rubyPickaxe, "Ruby Pickaxe");
+		LanguageRegistry.addName(rubyPickaxe, "Ruby Pick");
 	}
 
 	public static Item rubyAxe = (new ItemAxe(644, RUBY)).setUnlocalizedName(
@@ -190,16 +190,80 @@ public class GeorgesMod {
 	}
 
 	public static Item rubyShovel = (new ItemSpade(645, RUBY))
-			.setUnlocalizedName("rubyShovel").setTextureName(
-					"firstmod:ruby_shovel");
+			.setUnlocalizedName("rubyShovel")
+			.setTextureName("firstmod:ruby_shovel");
 	static {
 
-		GameRegistry.registerItem(blackDiamondShovel, "ruby_shovel");
-		LanguageRegistry.addName(blackDiamondShovel, "Ruby Shovel");
+		GameRegistry.registerItem(rubyShovel, "ruby_shovel");
+		LanguageRegistry.addName(rubyShovel, "Ruby Shovel");
+	}
+	
+	public static Item rubyHoe = (new ItemHoe(646, RUBY))
+			.setUnlocalizedName("rubyHoe")
+			.setTextureName("firstmod:ruby_hoe");
+	static {
+		
+		GameRegistry.registerItem(rubyHoe, "ruby_hoe");
+		LanguageRegistry.addName(rubyHoe, "Ruby Hoe");
+	}
+	
+	public static final EnumToolMaterial SAPPHIRE = EnumHelper.addToolMaterial("SAPPHIRE", 5, 500, 10.0F, 5.0F, 50);
+	
+	public static Item sapphireSword = (new ItemSword(647, SAPPHIRE))
+		    .setUnlocalizedName("sapphireSword")
+		    .setTextureName("firstmod:sapphire_sword");
+	static {
+		
+		GameRegistry.registerItem(sapphireSword, "sapphire_sword");
+		LanguageRegistry.addName(sapphireSword, "Sapphire Sword");
+	}
+	
+	public static Item sapphirePickaxe = (new ItemPickaxe(648, SAPPHIRE))
+			.setUnlocalizedName("sapphirePickaxe")
+			.setTextureName("firstmod:sapphire_pickaxe");
+	static {
+		
+		GameRegistry.registerItem(sapphirePickaxe, "sapphire_pickaxe");
+		LanguageRegistry.addName(sapphirePickaxe, "Sapphire Pick");
+	}
+	
+	public static Item amulet = (new Item(1000)).setUnlocalizedName("amulet")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:amulet");
+	static {
+		
+		GameRegistry.registerItem(amulet, "amulet");
+		LanguageRegistry.addName(amulet, "Notch's Amulet");
+	}
+	
+	public static Item amuletBase = (new Item(1001)).setUnlocalizedName("amuletBase")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:amulet_base");
+	static {
+		
+		GameRegistry.registerItem(amuletBase, "amulet_Base");
+		LanguageRegistry.addName(amuletBase, "Notch's Amulet Base");
+	}
+	
+	public static Item herobrineAmulet = (new Item(1002)).setUnlocalizedName("herobrineAmulet")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:herobrine_amulet");
+	static {
+		
+		GameRegistry.registerItem(herobrineAmulet, "herobrine_Amulet");
+		LanguageRegistry.addName(herobrineAmulet, "Herobrine's Amulet");
+	}
+	
+	public static Item herobrineAmuletBase = (new Item(1003)).setUnlocalizedName("herobrineAmuletBase")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:herobrine_amulet_base");
+	static {
+		
+		GameRegistry.registerItem(herobrineAmuletBase, "amulet_Base");
+		LanguageRegistry.addName(herobrineAmuletBase, "Herobrine's Amulet Base");
 	}
 
-	public static Item devilDust = (new Item(602))
-			.setUnlocalizedName("devildust")
+	public static Item devilDust = (new Item(602)).setUnlocalizedName("devildust")
 			.setCreativeTab(CreativeTabs.tabMaterials)
 			.setTextureName("firstmod:devil_dust");
 	static {
@@ -217,6 +281,14 @@ public class GeorgesMod {
 		GameRegistry.registerItem(heavenrod, "heaven_rod");
 		LanguageRegistry.addName(heavenrod, "Heaven Rod");
 	}
+	
+	public static Item devilrod = (new Item(603)).setUnlocalizedName("devilrod")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:devil_rod");
+	static {
+		GameRegistry.registerItem(devilrod, "devil_rod");
+		LanguageRegistry.addName(devilrod, "Devil Rod");
+	}
 
 	public static Item hellrod = (new Item(601)).setUnlocalizedName("hellrod")
 			.setCreativeTab(CreativeTabs.tabMaterials)
@@ -226,6 +298,15 @@ public class GeorgesMod {
 		GameRegistry.registerItem(hellrod, "hell_rod");
 		LanguageRegistry.addName(hellrod, "Hell Rod");
 	}
+	
+	public static Item powerrod = (new Item(609)).setUnlocalizedName("powerRod")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:power_rod");
+	static {
+		
+		GameRegistry.registerItem(powerrod, "power_rod");
+		LanguageRegistry.addName(powerrod, "Power Rod");
+	}	
 
 	public static Item ruby = (new Item(608)).setUnlocalizedName("ruby")
 			.setCreativeTab(CreativeTabs.tabMaterials)
@@ -234,6 +315,27 @@ public class GeorgesMod {
 
 		GameRegistry.registerItem(ruby, "ruby");
 		LanguageRegistry.addName(ruby, "Ruby");
+	}
+	
+	public static final EnumToolMaterial EMERALD = EnumHelper
+			.addToolMaterial("EMERALD", 5000000, 2111111111, 80.0F, 40.0F, 10000);
+
+	public static Item powerSword = (new ItemSword(650, EMERALD))
+			.setUnlocalizedName("powerSword").setTextureName(
+					"firstmod:power_sword");
+	static {
+
+		GameRegistry.registerItem(powerSword, "power_sword");
+		LanguageRegistry.addName(powerSword, "Power Sword");
+	}
+	
+	public static Item powerstone = (new Item(610)).setUnlocalizedName("powerStone")
+			.setCreativeTab(CreativeTabs.tabMaterials)
+			.setTextureName("firstmod:power_stone");
+	static {
+
+		GameRegistry.registerItem(powerstone, "power_stone");
+		LanguageRegistry.addName(powerstone, "Power Stone");
 	}
 
 	@Instance("GeorgesMod")
@@ -252,7 +354,7 @@ public class GeorgesMod {
 		proxy.registerRenderers();
 
      ItemStack dirtStack = new ItemStack(Block.dirt);
-     ItemStack diamondsStack = new ItemStack(Item.diamond, 64);
+     ItemStack diamondStack = new ItemStack(Item.diamond);
      ItemStack leatherStack = new ItemStack(Item.leather);
      ItemStack stringStack = new ItemStack(Item.silk);
      ItemStack IronStack = new ItemStack(Item.ingotIron);
@@ -284,6 +386,12 @@ public class GeorgesMod {
      ItemStack hellrodStack = new ItemStack(hellrod);
      ItemStack rubyStack = new ItemStack(ruby);
      ItemStack magmaCreamStack = new ItemStack(Item.magmaCream);
+     ItemStack devilDustStack = new ItemStack(devilDust);
+     ItemStack devilRodStack = new ItemStack(devilrod);
+     ItemStack sapphireStack = new ItemStack(sapphire);
+     ItemStack glowstoneStack = new ItemStack(Item.glowstone);
+     ItemStack amuletbase = new ItemStack(amuletBase);
+     
 
 
      GameRegistry.addRecipe(new ItemStack(Item.saddle), 
@@ -311,7 +419,7 @@ public class GeorgesMod {
     		 "xyx",
     		 "xxx",
     		 "zzz",
-    		 'x', diamondsStack, 'y', SaddleStack, 'z', leatherStack);
+    		 'x', diamondStack, 'y', SaddleStack, 'z', leatherStack);
      GameRegistry.addRecipe(new ItemStack(Item.horseArmorIron),
     		 "xyx",
     		 "xxx",
@@ -506,7 +614,58 @@ public class GeorgesMod {
 			"xxx",
 			"xyx",
 			"xxx",
-			"x", blazePowderStack, "y", magmaCreamStack);
+			'x', blazePowderStack, 'y', magmaCreamStack);
+	GameRegistry.addRecipe(new ItemStack(devilrod),
+			"x  ",
+			"x  ",
+			"   ",
+			'x', devilDustStack);
+	GameRegistry.addRecipe(new ItemStack(devilrod),
+			"   ",
+			"x  ",
+			"x  ",
+			'x', devilDustStack);
+	GameRegistry.addRecipe(new ItemStack(devilrod),
+			"  x",
+			"  x",
+			"   ",
+			'x', devilDustStack);
+	GameRegistry.addRecipe(new ItemStack(devilrod),
+			"   ",
+			"  x",
+			"  x",
+			'x', devilDustStack);
+	GameRegistry.addRecipe(new ItemStack(powerrod),
+			" z ",
+			" y ",
+			" x ",
+			'x', heavenRodStack, 'y', hellrodStack, 'z',  devilRodStack);
+	GameRegistry.addRecipe(new ItemStack(powerstone),
+			"xzx",
+			"xyx",
+			"xax",
+			'x', glowstoneStack, 'y', diamondStack, 'z',  rubyStack, 'a', sapphireStack);
+    GameRegistry.addRecipe(new ItemStack(powerSword),
+			" x ",
+			" y ",
+			" z ",
+			'x', powerstone, 'y', devilDust, 'z', powerrod);
+    GameRegistry.addRecipe(new ItemStack(amulet),
+    		"x  ",
+    		"x  ",
+    		"y  ",
+    		'x', stringStack, 'y', amuletbase);
+    GameRegistry.addRecipe(new ItemStack(amulet),
+    		" x ",
+    		" x ",
+    		" y ",
+    		'x', stringStack, 'y', amuletbase);
+    GameRegistry.addRecipe(new ItemStack(amulet),
+    		"  x",
+    		"  x",
+    		"  y",
+    		'x', stringStack, 'y', amuletbase);
+			
 		
 		// GameRegistry.addSmelting(Block.stone.blockID, new ItemStack(
 		// Block.stoneBrick), 0.1f);
